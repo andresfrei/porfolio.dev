@@ -68,8 +68,8 @@ Esto iniciará un servidor de desarrollo local y abrirá automáticamente el sit
 Si tienes preguntas, sugerencias o comentarios sobre este proyecto, no dudes en contactarme:
 
 - Correo electrónico: andresfrei@gmail.com
-- Sitio web: [www.tu-sitio-web.com](https://andresfrei.ar)
-- LinkedIn: [linkedin.com/tu-perfil](https://www.linkedin.com/andresfrei)
+- Sitio web: [https://andresfrei.ar](https://andresfrei.ar)
+- LinkedIn: [linkedin.com/andresfrei](https://www.linkedin.com/andresfrei)
 
 ¡Gracias por visitar mi portfolio!
 
