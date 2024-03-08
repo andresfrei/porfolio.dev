@@ -69,7 +69,7 @@ Si tienes preguntas, sugerencias o comentarios sobre este proyecto, no dudes en 
 
 - Correo electrónico: andresfrei@gmail.com
 - Sitio web: [https://andresfrei.ar](https://andresfrei.ar)
-- LinkedIn: [linkedin.com/andresfrei](https://www.linkedin.com/andresfrei)
+- LinkedIn: [linkedin.com/andresfrei](https://www.linkedin.com/in/andresfrei)
 
 ¡Gracias por visitar mi portfolio!
 
