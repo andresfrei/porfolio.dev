@@ -7,6 +7,8 @@ import Node from "./icons/Node.astro";
 import Bootstrap from "./icons/Bootstrap.astro";
 import Mongo from "./icons/Mongo.astro";
 import LinkButton from "./LinkButton.astro";
+import Nestjs from "./icons/Nestjs.astro";
+import GraphQL from "./icons/Graphql.astro";
 
 const TAGS = {
   NEXT: {
@@ -39,8 +41,27 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Mongo,
   },
+  NESTJS: {
+    name: "NestJs",
+    class: "bg-[#003159] text-white",
+    icon: Nestjs,
+  },
+  GRAPHQL: {
+    name: "GraphQL",
+    class: "bg-[#003159] text-white",
+    icon: GraphQL,
+  },
 };
 const PROJECTS = [
+  {
+    title: "Nest Auth Base",
+    description:
+      "Este proyecto es una implementación base para la autenticación en NestJS utilizando API REST para la autenticación y GraphQL para el resto de las funcionalidades. Incluye autenticación con JWT, confirmación de email, y validación de usuarios con TypeORM y PostgreSQL.",
+    link: "#",
+    github: "https://github.com/andresfrei/nestjs-auth-base",
+    image: "/projects/nest-auth-base.webp",
+    tags: [TAGS.NESTJS, TAGS.GRAPHQL],
+  },
   {
     title: "LocalTalent - App para contactar servicios de forma segura",
     description:
