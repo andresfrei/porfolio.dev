@@ -9,6 +9,8 @@ import Mongo from "./icons/Mongo.astro";
 import LinkButton from "./LinkButton.astro";
 import Nestjs from "./icons/Nestjs.astro";
 import GraphQL from "./icons/Graphql.astro";
+import Prisma from "./icons/Prisma.astro";
+import Postgresql from "./icons/Postgresql.astro";
 
 const TAGS = {
   NEXT: {
@@ -51,8 +53,26 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: GraphQL,
   },
+  PRISMA: {
+    name: "Prisma",
+    class: "bg-green-950 text-white",
+    icon: Prisma,
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-black text-white",
+    icon: Postgresql,
+  },
 };
 const PROJECTS = [
+  {
+    title: "COBOL-GPT",
+    description:
+      "COBOL-GPT es una herramienta innovadora diseñada para facilitar la documentación automática de sistemas COBOL. Este proyecto utiliza la API de OpenAI para analizar y comprender el código COBOL, generando descripciones detalladas y estructuradas de manera dinámica. Su objetivo es simplificar el proceso de documentación, permitiendo a los desarrolladores y equipos de mantenimiento obtener información clara y precisa sobre la lógica del sistema, sin necesidad de una revisión manual exhaustiva. Con COBOL-GPT, se optimiza la comprensión del código legacy, se mejora la eficiencia del mantenimiento, y se reduce el tiempo invertido en tareas de documentación.",
+    link: "#",
+    image: "/projects/cobol-gpt.webp",
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.PRISMA, TAGS.POSTGRESQL],
+  },
   {
     title: "Nest Auth Base",
     description:
