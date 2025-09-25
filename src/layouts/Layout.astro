@@ -7,9 +7,19 @@ import Footer from "../components/Footer.astro";
 interface Props {
   title: string;
   description: string;
+  image?: string;
+  canonical?: string;
 }
 
-const { description, title } = Astro.props;
+const { description, title, image = "/avatar.webp", canonical } = Astro.props;
+
+// Construir URL canónica
+const canonicalURL = canonical
+  ? new URL(canonical, Astro.site)
+  : new URL(Astro.url.pathname, Astro.site);
+
+// URL de la imagen para Open Graph
+const socialImageURL = new URL(image, Astro.site);
 ---
 
 <!doctype html>
@@ -17,10 +27,87 @@ const { description, title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Basic SEO -->
     <title>{title}</title>
+    <meta name="author" content="Andrés Frei" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="es" />
+
+    <!-- Keywords -->
+    <meta
+      name="keywords"
+      content="DBA, Full Stack Developer, PostgreSQL, Node.js, React, Next.js, Astro, Tailwind CSS, Desarrollador Web, Base de Datos, IA, Inteligencia Artificial, Buenos Aires, Argentina"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta
+      property="og:image:alt"
+      content="Andrés Frei - DBA & Full Stack Developer"
+    />
+    <meta property="og:site_name" content="Portfolio de Andrés Frei" />
+    <meta property="og:locale" content="es_AR" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL} />
+    <meta
+      name="twitter:image:alt"
+      content="Andrés Frei - DBA & Full Stack Developer"
+    />
+    <meta name="twitter:site" content="@andresfrei" />
+    <meta name="twitter:creator" content="@andresfrei" />
+
+    <!-- Additional meta tags -->
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Andrés Frei",
+        "jobTitle": ["DBA", "Full Stack Developer"],
+        "description": "DBA & Full Stack Developer especializado en IA, bases de datos y desarrollo con 20+ años de experiencia",
+        "url": "https://andresfrei.dev",
+        "image": "https://andresfrei.dev/avatar.jpeg",
+        "sameAs": [
+          "https://linkedin.com/in/andresfrei",
+          "https://github.com/andresfrei"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Buenos Aires",
+          "addressCountry": "AR"
+        },
+        "knowsAbout": [
+          "PostgreSQL",
+          "Node.js",
+          "React",
+          "Next.js",
+          "Astro",
+          "Tailwind CSS",
+          "Database Administration",
+          "Full Stack Development",
+          "Artificial Intelligence"
+        ]
+      }
+    </script>
   </head>
 
   <body class="relative text-black dark:text-white">
