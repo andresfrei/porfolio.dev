@@ -1,21 +1,26 @@
 ---
-import GitHub from "./icons/GitHub.astro";
-import NextJS from "./icons/NextJS.astro";
-import Tailwind from "./icons/Tailwind.astro";
-import React from "./icons/React.astro";
-import Node from "./icons/Node.astro";
-import Bootstrap from "./icons/Bootstrap.astro";
-import Mongo from "./icons/Mongo.astro";
-import LinkButton from "./LinkButton.astro";
-import Nestjs from "./icons/Nestjs.astro";
-import GraphQL from "./icons/Graphql.astro";
-import Prisma from "./icons/Prisma.astro";
-import Postgresql from "./icons/Postgresql.astro";
-import Openai from "./icons/OpenAi.astro";
-import Python from "./icons/Python.astro";
+import { PROJECTS_EN, PROJECTS_ES, PROJECTS_PT } from "@/data/projects";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import AWS from "./icons/AWS.astro";
+import Bootstrap from "./icons/Bootstrap.astro";
 import ChromaDB from "./icons/ChromaDB.astro";
 import COBOL from "./icons/COBOL.astro";
+import GitHub from "./icons/GitHub.astro";
+import GraphQL from "./icons/Graphql.astro";
+import Mongo from "./icons/Mongo.astro";
+import Nestjs from "./icons/Nestjs.astro";
+import NextJS from "./icons/NextJS.astro";
+import Node from "./icons/Node.astro";
+import Openai from "./icons/OpenAi.astro";
+import Postgresql from "./icons/Postgresql.astro";
+import Prisma from "./icons/Prisma.astro";
+import Python from "./icons/Python.astro";
+import React from "./icons/React.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import LinkButton from "./LinkButton.astro";
+
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
 
 const TAGS = {
   NEXT: {
@@ -94,75 +99,20 @@ const TAGS = {
     icon: COBOL,
   },
 };
-const PROJECTS = [
-  {
-    title: "Qwerty App - Sistema de Gestión de Ventas",
-    description: `Sistema empresarial de gestión de ventas desarrollado con arquitectura moderna y optimización de base de datos. 
 
-Implementé una solución escalable con React Native y Supabase, enfocándome en la optimización de consultas y rendimiento de la base de datos en tiempo real. 
+const PROJECTS_DATA = {
+  es: PROJECTS_ES,
+  en: PROJECTS_EN,
+  pt: PROJECTS_PT,
+};
 
-El sistema incluye gestión de inventarios, estadísticas avanzadas y reportes automáticos, aplicando mis 20+ años de experiencia en optimización de bases de datos y desarrollo de sistemas productivos para pequeños y medianos comercios.`,
-    link: "#",
-    image: "/projects/querty.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.PRISMA, TAGS.POSTGRESQL],
-  },
-  {
-    title: "COBOL-GPT - Documentador Inteligente con IA",
-    description: `Herramienta empresarial de documentación automática para sistemas COBOL legacy, desarrollada durante mi rol actual en Automóviles San Jorge.
+const projectsRaw = PROJECTS_DATA[currentLang];
 
-Implementé una solución completa con RAG (Retrieval-Augmented Generation), embeddings vectoriales y ChromaDB para analizar código COBOL de más de 30 años de antigüedad.
-
-La solución incluye agentes autónomos personalizados, integración con OpenAI API, y un sistema de recuperación de información que ha reducido en 80% el tiempo de documentación de sistemas legacy, facilitando el mantenimiento y comprensión del código.`,
-    link: "#",
-    image: "/projects/cobol-gpt.webp",
-    tags: [
-      TAGS.NEXT,
-      TAGS.TAILWIND,
-      TAGS.PRISMA,
-      TAGS.POSTGRESQL,
-      TAGS.OPENAI,
-      TAGS.NESTJS,
-      TAGS.CHROMADB,
-      TAGS.COBOL,
-    ],
-  },
-  {
-    title: "NestJS Auth Base - Arquitectura de Autenticación Empresarial",
-    description: `Framework de autenticación robusto desarrollado con arquitectura híbrida REST/GraphQL, implementando mejores prácticas de seguridad empresarial.
-
-Diseñé una solución escalable con JWT, confirmación de email, validación de usuarios y gestión de roles utilizando TypeORM y PostgreSQL con optimización avanzada de queries.
-
-El sistema incluye middleware de seguridad, hash de contraseñas con salt, rate limiting y auditoría completa, aplicando patrones de arquitectura limpia y principios SOLID para entornos productivos.`,
-    link: "#",
-    github: "https://github.com/andresfrei/nestjs-auth-base",
-    image: "/projects/nest-auth-base.webp",
-    tags: [TAGS.NESTJS, TAGS.GRAPHQL, TAGS.POSTGRESQL, TAGS.PRISMA],
-  },
-  {
-    title: "LocalTalent - Plataforma de Servicios con Sistema de Matching",
-    description: `Plataforma empresarial de servicios con algoritmo de matching inteligente y sistema de calificaciones bidireccional.
-
-Desarrollé la arquitectura de base de datos optimizada para búsquedas geoespaciales, implementando índices complejos y queries optimizadas para manejar miles de usuarios concurrentes.
-
-El sistema incluye autenticación segura, gestión de pagos, notificaciones en tiempo real y analytics avanzados. Proyecto colaborativo donde lideré el diseño de la arquitectura de datos y optimización de rendimiento.`,
-    link: "#",
-    github: "https://github.com/andresfrei/local-talent",
-    image: "/projects/localtalent.webp",
-    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.EXPRESS, TAGS.MONGODB],
-  },
-  {
-    title: "QuizWiz - Sistema de Gestión de Formularios Empresariales",
-    description: `Sistema de recopilación y análisis de datos empresariales con capacidades de reporting avanzado y dashboard ejecutivo.
-
-Implementé una arquitectura escalable para manejar formularios complejos con validaciones dinámicas, almacenamiento optimizado y generación de reportes en tiempo real.
-
-La solución incluye export a múltiples formatos, análisis estadístico automático y integración con herramientas de BI, facilitando la toma de decisiones basada en datos para equipos de trabajo.`,
-    github: "https://github.com/andresfrei/s11-12-n-java-next",
-    image: "/projects/quizwiz.webp",
-    link: "#",
-    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.POSTGRESQL],
-  },
-];
+// Map tag strings to TAGS objects
+const PROJECTS = projectsRaw.map((project) => ({
+  ...project,
+  tags: project.tags.map((tagName) => TAGS[tagName as keyof typeof TAGS]),
+}));
 ---
 
 <section class="flex flex-col gap-y-16">
@@ -195,7 +145,7 @@ La solución incluye export a múltiples formatos, análisis estadístico autom�
           {github && (
             <LinkButton href={github} target="_blank">
               <GitHub class="size-6" />
-              Ver código fuente
+              {t("projects.viewCode")}
             </LinkButton>
           )}
           {link && link !== "#" && (
@@ -221,7 +171,7 @@ La solución incluye export a múltiples formatos, análisis estadístico autom�
                 <path d="M17 10l1 4l1.5 -4l1.5 4l1 -4" />
                 <path d="M9.5 10l1 4l1.5 -4l1.5 4l1 -4" />
               </svg>
-              Ir al sitio web
+              {t("projects.viewSite")}
             </LinkButton>
           )}
         </footer>

@@ -1,5 +1,9 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
 const currentYear = new Date().getFullYear();
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
 ---
 
 <footer
@@ -10,20 +14,20 @@ const currentYear = new Date().getFullYear();
   >
     <span
       class="text-sm sm:text-center text-yellow-800/90 dark:text-yellow-200/90"
-      >Hecho con
-      <a href="https://astro.build" class="hover:underline">Astro</a> y gran colaboración
-      del gran
+      >{t("footer.madeWith")}
+      <a href="https://astro.build" class="hover:underline">Astro</a>
+      {t("footer.collaboration")}
       <a href="https://midu.dev/" class="hover:underline">Midu</a>.
     </span>
     <ul
       class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
     >
       <li>
-        <a href="#" class="hover:underline me-4 md:me-6">Inicio</a>
+        <a
+          href={currentLang === "es" ? "/" : `/${currentLang}/`}
+          class="hover:underline me-4 md:me-6">{t("footer.home")}</a
+        >
       </li>
-      <!-- <li>
-        <a href="#" class="hover:underline">Contacto</a>
-      </li> -->
     </ul>
   </div>
 </footer>

@@ -1,43 +1,23 @@
+---
+import { ABOUT_EN, ABOUT_ES, ABOUT_PT } from "@/data/about";
+import { getLangFromUrl } from "@/i18n/utils";
+
+const currentLang = getLangFromUrl(Astro.url);
+
+const ABOUT_DATA = {
+  es: ABOUT_ES,
+  en: ABOUT_EN,
+  pt: ABOUT_PT,
+};
+
+const aboutContent = ABOUT_DATA[currentLang];
+---
+
 <section class="flex flex-col md:flex-row gap-8 justify-center items-center">
   <div
     class="[&>p]:mb-4 [&>p>strong]:text-yellow-400 [&>p>strong]:font-semibold text-pretty order-2 md:order-1"
   >
-    <p>
-      Profesional de IT con <strong>20+ años de experiencia</strong> en administración
-      de bases de datos y desarrollo Full Stack. Especializado en <strong
-        >seguridad, integridad, disponibilidad y optimización</strong
-      > de performance de bases de datos.
-    </p>
-
-    <p>
-      Aplico <strong>Inteligencia Artificial personalizada</strong> (agentes autónomos,
-      RAG, bases vectoriales) para potenciar procesos de mantenimiento, documentación
-      y análisis. Desarrollo proyectos <strong
-        >open-source como Goat-Mode</strong
-      >, que mejoran agentes de IA e integran con mi flujo de trabajo diario.
-    </p>
-
-    <p>
-      Experiencia en <strong>Cloud (AWS, IaaS, PaaS, SaaS)</strong>, despliegue
-      de servicios en producción y
-      <strong>liderazgo de equipos bajo SCRUM</strong>. Autodidacta con foco en
-      tuning avanzado de queries, migraciones y planes de mantenimiento en
-      entornos productivos.
-    </p>
-
-    <p>
-      Actualmente trabajo en <strong
-        ><em class="italic">
-          <a target="_blank" href="https://www.chevrolet-sanjorge.com.ar/"
-            >Automóviles San Jorge</a
-          >
-        </em></strong
-      > como DBA & IA Solutions, implementando IA en sistemas legacy COBOL.
-    </p>
-
-    <p>
-      Me gusta la música 🎵, la filosofía 📚 y la innovación tecnológica 💡.
-    </p>
+    {aboutContent.paragraphs.map((paragraph) => <p set:html={paragraph} />)}
   </div>
   <img src="/avatar.jpeg" class="rounded-full size-64 order-1 md:order-2" />
 </section>

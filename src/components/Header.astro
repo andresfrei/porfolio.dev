@@ -1,3 +1,11 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import LanguageSelector from "./LanguageSelector.astro";
+
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
+---
+
 <header
   class={`
     flex justify-center items-center
@@ -8,30 +16,32 @@
     z-10
   `}
 >
-  <nav
-    class={`
-      border border-black rounded-full
-      px-3 py-1
-      flex flex-row items-center
-      bg-neutral-200 dark:bg-black/50
-      backdrop-blur-2xl
-    `}
+  <div
+    class="flex items-center gap-3 w-full px-4 justify-between xl:justify-center"
   >
-    <a
-      class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href="/#experiencia">Experiencia</a
+    <nav
+      class={`
+        border border-black rounded-full
+        px-3 py-1
+        flex flex-row items-center
+        bg-neutral-200 dark:bg-black/50
+        backdrop-blur-2xl
+      `}
     >
-    <a
-      class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href="/#proyectos">Proyectos</a
-    >
-    <a
-      class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href="/#sobre-mi">Sobre mí</a
-    >
-    <!-- <a
-      class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href="/#contacto">Contacto</a
-    > -->
-  </nav>
+      <a
+        class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
+        href="/#experiencia">{t("nav.experience")}</a
+      >
+      <a
+        class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
+        href="/#proyectos">{t("nav.projects")}</a
+      >
+      <a
+        class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
+        href="/#sobre-mi">{t("nav.about")}</a
+      >
+    </nav>
+
+    <LanguageSelector />
+  </div>
 </header>

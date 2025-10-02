@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "experience": "Experience",
+    "projects": "Projects",
+    "about": "About me",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Available for work",
+    "title": "Hey, I'm Andrés Frei",
+    "subtitle": "DBA & Full Stack Developer",
+    "description": "+20 years of experience in databases and development. From Buenos Aires, Argentina 🇦🇷. Specialized in AI, PostgreSQL and modern technologies.",
+    "contact": "Contact me",
+    "downloadCV": "Download CV"
+  },
+  "experience": {
+    "title": "Work Experience",
+    "current": "Present"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "viewCode": "View source code",
+    "viewSite": "Go to website"
+  },
+  "about": {
+    "title": "About me",
+    "content": "My name is Andrés Frei. I started programming over 20 years ago, from Buenos Aires, Argentina. My specialty is Full Stack development and database administration.\n\nAmong my achievements, I highlight the **implementation of scalable architectures** and the **optimization of high-performance systems**. I also specialize in **artificial intelligence**, working with language models and RAG.\n\nCurrently, I work with technologies like **PostgreSQL, Node.js, React, Next.js and Python**. I'm passionate about creating efficient solutions and staying updated with the latest development trends."
+  },
+  "footer": {
+    "description": "Almost all pages of this portfolio have been copied from",
+    "rights": "© 2025. Almost all rights reserved.",
+    "madeWith": "Made with",
+    "collaboration": "and great collaboration from",
+    "home": "Home"
+  },
+  "meta": {
+    "title": "Andrés Frei's Portfolio - DBA & Full Stack Developer",
+    "description": "DBA & Full Stack Developer with +20 years of experience. Specialized in AI, PostgreSQL, Node.js and React. Available for projects.",
+    "keywords": "DBA, Full Stack Developer, PostgreSQL, Node.js, React, Next.js, Astro, Tailwind CSS, Web Developer, Database, AI, Artificial Intelligence, Buenos Aires, Argentina"
+  },
+  "cv": {
+    "url": "https://drive.google.com/file/d/1yRnkZFDjRVyOwQNjCko0dt23aUqHRFWy/view?usp=sharing"
+  }
+}

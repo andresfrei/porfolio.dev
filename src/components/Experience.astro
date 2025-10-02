@@ -1,32 +1,17 @@
 ---
+import { EXPERIENCE_EN, EXPERIENCE_ES, EXPERIENCE_PT } from "@/data/experience";
+import { getLangFromUrl } from "@/i18n/utils";
 import ExperienceItem from "./ExperienceItem.astro";
-const EXPERIENCIE = [
-  {
-    date: "Dic 2023 - Actual",
-    title: "DBA & IA Solutions - Automóviles San Jorge",
-    description: `Administración de DBMaker (COBOL) y SQL Server. Gestión de backups, recuperación, alta disponibilidad y planes de mantenimiento. Configuración y soporte de controles de seguridad, privilegios y auditorías de usuarios. Optimización de queries y tuning de rendimiento en entornos productivos. 
 
-Implementación de IA en sistemas legacy: análisis de código fuente COBOL y manuales de usuario. Desarrollo de agente inteligente con distintos niveles de acceso. Creación de documentador interactivo con IA, optimizando comprensión y mantenimiento.`,
-    link: "https://www.chevrolet-sanjorge.com.ar",
-  },
-  {
-    date: "Jul 2019 - Nov 2023",
-    title: "Administrador de Sistemas - Sistemas de Codificación",
-    description: `Gestión integral del área de sistemas. Desarrollo y migración de software de gestión. Diseño y construcción de app para consulta de reparaciones de servicio técnico con SQL Server + MongoDB. Optimización de queries e integración con ERP de terceros. Tecnologías aplicadas: C#, TypeScript, SQL Server, MongoDB.`,
-    link: "https://siscod.com.ar",
-  },
-  {
-    date: "Jul 2019 - Nov 2023",
-    title: "Desarrollador Independiente - Distribuidora FARGO",
-    description: `Desarrollo de sistema de preventa para distribuidoras (facturación electrónica, cajas, repartos). Optimización y mantenimiento de BD en Visual Basic + SQL Server.`,
-  },
-  {
-    date: "May 2004 - Actual",
-    title: "Administrador de Sistemas - AFEMA S.A.",
-    description: `Desarrollo de aplicación para liquidación de sueldos. Tuning de queries y mantenimiento de SQL Server. Relación de dependencia hasta 2008; luego freelance.`,
-    link: "https://www.afema.com.ar",
-  },
-];
+const currentLang = getLangFromUrl(Astro.url);
+
+const EXPERIENCE_DATA = {
+  es: EXPERIENCE_ES,
+  en: EXPERIENCE_EN,
+  pt: EXPERIENCE_PT,
+};
+
+const EXPERIENCIE = EXPERIENCE_DATA[currentLang];
 ---
 
 <ol class="relative border-s border-gray-200 ml-3">

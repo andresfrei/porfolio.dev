@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "badge": "Disponible para trabajar",
+    "title": "Hey, soy Andrés Frei",
+    "subtitle": "DBA & Full Stack Developer",
+    "description": "+20 años de experiencia en bases de datos y desarrollo. De Buenos Aires, Argentina 🇦🇷. Especializado en IA, PostgreSQL y tecnologías modernas.",
+    "contact": "Contáctame",
+    "downloadCV": "Descargar CV"
+  },
+  "experience": {
+    "title": "Experiencia laboral",
+    "current": "Actualidad"
+  },
+  "projects": {
+    "title": "Proyectos destacados",
+    "viewCode": "Ver código fuente",
+    "viewSite": "Ir al sitio web"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "content": "Me llamo Andrés Frei. Empecé en la programación hace más de 20 años, desde Buenos Aires, Argentina. Mi especialidad es el desarrollo Full Stack y la administración de bases de datos.\n\nEntre mis logros destaco la **implementación de arquitecturas escalables** y la **optimización de sistemas de alto rendimiento**. También me especializo en **inteligencia artificial**, trabajando con modelos de lenguaje y RAG.\n\nActualmente trabajo con tecnologías como **PostgreSQL, Node.js, React, Next.js y Python**. Me apasiona crear soluciones eficientes y mantenerme actualizado con las últimas tendencias del desarrollo."
+  },
+  "footer": {
+    "description": "Casi todas las páginas de este portfolio han sido copiadas de",
+    "rights": "© 2025. Casi todos los derechos reservados.",
+    "madeWith": "Hecho con",
+    "collaboration": "y gran colaboración del gran",
+    "home": "Inicio"
+  },
+  "meta": {
+    "title": "Portfolio de Andrés Frei - DBA & Full Stack Developer",
+    "description": "DBA & Full Stack Developer con +20 años de experiencia. Especializado en IA, PostgreSQL, Node.js y React. Disponible para proyectos.",
+    "keywords": "DBA, Full Stack Developer, PostgreSQL, Node.js, React, Next.js, Astro, Tailwind CSS, Desarrollador Web, Base de Datos, IA, Inteligencia Artificial, Buenos Aires, Argentina"
+  },
+  "cv": {
+    "url": "https://drive.google.com/file/d/1xmo_uEUNzhYYBiI4-DpaV5EDW_munvxn/view?usp=sharing"
+  }
+}

@@ -2,7 +2,10 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://andresfrei.dev/sitemap-index.xml
+Sitemap: https://andresfrei.dev/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
+
+# Disallow query parameters
+Disallow: /*?*
